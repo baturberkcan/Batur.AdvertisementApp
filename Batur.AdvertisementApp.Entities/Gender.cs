@@ -8,7 +8,7 @@ namespace Batur.AdvertisementApp.Entities
 {
     public class Gender:BaseEntiy
     {
-        public string Degination { get; set; }
+        public string Defination { get; set; }
         public List<AppUser> AppUsers { get; set; }
     }
 }
