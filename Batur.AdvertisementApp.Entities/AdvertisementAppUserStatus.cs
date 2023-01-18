@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Batur.AdvertisementApp.Entities
 {
-    public class AppRole : BaseEntiy
+    public class AdvertisementAppUserStatus : BaseEntiy
     {
         public string Defination { get; set; }
-        public List<AppUserRole> AppUserRoles { get; set; }
-
+        public List<AdvertisementAppUser> AdvertisementAppUsers { get; set; }
     }
 }
