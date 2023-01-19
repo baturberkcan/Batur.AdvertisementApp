@@ -8,7 +8,7 @@ namespace Batur.AdvertisementApp.Entities
 {
     public class AdvertisementAppUser : BaseEntiy
     {
-        public Advertisement AdvertisementId { get; set; }
+        public int AdvertisementId { get; set; }
         public Advertisement Advertisement { get; set; }
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }

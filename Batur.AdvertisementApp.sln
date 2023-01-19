@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Batur.AdvertisementApp.Enti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Batur.AdvertisementApp.DataAccess", "Batur.AdvertisementApp.DataAccess\Batur.AdvertisementApp.DataAccess.csproj", "{3DA401BD-15A8-4038-BBAD-C70C44791871}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Batur.AdvertisementApp.Business", "Batur.AdvertisementApp.Business\Batur.AdvertisementApp.Business.csproj", "{ABBE32D4-6D92-4B7B-BCBF-CEF6917DC992}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Batur.AdvertisementApp.UI", "Batur.AdvertisementApp.UI\Batur.AdvertisementApp.UI.csproj", "{8025B6BF-D47C-411C-BBEB-9AD10D6587E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{3DA401BD-15A8-4038-BBAD-C70C44791871}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DA401BD-15A8-4038-BBAD-C70C44791871}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DA401BD-15A8-4038-BBAD-C70C44791871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABBE32D4-6D92-4B7B-BCBF-CEF6917DC992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABBE32D4-6D92-4B7B-BCBF-CEF6917DC992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABBE32D4-6D92-4B7B-BCBF-CEF6917DC992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABBE32D4-6D92-4B7B-BCBF-CEF6917DC992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8025B6BF-D47C-411C-BBEB-9AD10D6587E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8025B6BF-D47C-411C-BBEB-9AD10D6587E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8025B6BF-D47C-411C-BBEB-9AD10D6587E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8025B6BF-D47C-411C-BBEB-9AD10D6587E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -15,7 +15,7 @@ namespace Batur.AdvertisementApp.DataAccess.Configrations
         {
             builder.Property(x => x.Title).HasMaxLength(300).IsRequired();
             builder.Property(x => x.Description).HasColumnType("ntext").IsRequired();
-            builder.Property(x => x.CreateDate).HasDefaultValueSql("getdate");
+            builder.Property(x => x.CreatedDate).HasDefaultValueSql("getdate()");
             builder.Property(x => x.ImagePath).HasMaxLength(500).IsRequired();
         }
     }

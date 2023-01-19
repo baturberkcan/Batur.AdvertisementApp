@@ -27,6 +27,7 @@ namespace Batur.AdvertisementApp.DataAccess.Configrations
 
 
             builder.Property(x => x.CvPath).HasMaxLength(500).IsRequired();
+
         }
     }
 }
