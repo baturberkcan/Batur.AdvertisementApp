@@ -38,15 +38,15 @@ namespace Batur.AdvertisementApp.DataAccess.Repository
             return orderByType == OrderByType.ASC ? await _context.Set<T>().Where(filter).OrderBy(selector).AsNoTracking().ToListAsync() : await _context.Set<T>().Where(filter).OrderByDescending(selector).AsNoTracking().ToListAsync();
         }
 
-        public async Task<T> Find(object id)
+        public async Task<T> FindAsync(object id)
         {
             return await _context.Set<T>().FindAsync(id);
         }
-        public async Task<T> GetByFilter(Expression<Func<T, bool>> filter, bool asNoTracking = false)
+        public async Task<T> GetByFilterAsync(Expression<Func<T, bool>> filter, bool asNoTracking = false)
         {
             return !asNoTracking ? await _context.Set<T>().AsNoTracking().SingleOrDefaultAsync(filter) : await _context.Set<T>().SingleOrDefaultAsync(filter);
         }
-        public IQueryable<T> GetQuery()
+        public IQueryable<T> GetQueryAsync()
         {
             return _context.Set<T>().AsQueryable();
         }
@@ -54,7 +54,7 @@ namespace Batur.AdvertisementApp.DataAccess.Repository
         {
             _context.Set<T>().Remove(entity);
         }
-        public async Task Create(T entity)
+        public async Task CreateAsync(T entity)
         {
             await _context.Set<T>().AddAsync(entity);
         }
