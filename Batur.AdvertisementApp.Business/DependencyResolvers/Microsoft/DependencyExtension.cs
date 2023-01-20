@@ -1,4 +1,9 @@
-﻿using Batur.AdvertisementApp.DataAccess.Context;
+﻿using AutoMapper;
+using Batur.AdvertisementApp.Business.ValidationRules;
+using Batur.AdvertisementApp.DataAccess.Context;
+using Batur.AdvertisementApp.DataAccess.UnitOfWork;
+using Batur.AdvertisementApp.Dtos.ProvidedServicesDto;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,13 +17,24 @@ namespace Batur.AdvertisementApp.Business.DependencyResolvers.Microsoft
 {
     public static class DependencyExtension
     {
-        public static void AddDependencies(this IServiceCollection services,IConfiguration configuration)
+        public static void AddDependencies(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<AdvertisementContext>(opt =>
             {
                 opt.UseSqlServer(configuration.GetConnectionString("Local"));
 
             });
+            var mapperConfigration = new MapperConfiguration(opt =>
+            {
+
+            });
+            
+            
+            var mapper = mapperConfigration.CreateMapper();
+            services.AddSingleton(mapper);
+            services.AddScoped<IUow, Uow>();
+            services.AddTransient<IValidator<ProvidedServiceCreateDto>, ProvidedServiceCreateDtoValidator>();
+            services.AddTransient<IValidator<ProvidedServiceUpdateDto>, ProvidedServiceUpdateDtoValidator>();
         }
     }
 }
