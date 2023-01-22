@@ -19,5 +19,9 @@ namespace Batur.AdvertisementApp.UI.Controllers
             var response = await _providedService.GetAllAsync();
             return this.ResponseView(response);
         }
+        public IActionResult HumanResources()
+        {
+            return View();
+        }
     }
 }
