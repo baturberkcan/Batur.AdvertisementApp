@@ -1,6 +1,7 @@
 ﻿using Batur.AdvertisementApp.Business.Interfaces;
 using Batur.AdvertisementApp.UI.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Batur.AdvertisementApp.UI.Controllers
@@ -8,10 +9,12 @@ namespace Batur.AdvertisementApp.UI.Controllers
     public class HomeController : Controller
     {
         private readonly IProvidedServiceService _providedService;
+        private readonly IAdvertisementService _advertisementService;
 
-        public HomeController(IProvidedServiceService providedService)
+        public HomeController(IProvidedServiceService providedService, IAdvertisementService advertisementService)
         {
             _providedService = providedService;
+            _advertisementService = advertisementService;
         }
 
         public async Task<IActionResult> Index()
@@ -19,9 +22,11 @@ namespace Batur.AdvertisementApp.UI.Controllers
             var response = await _providedService.GetAllAsync();
             return this.ResponseView(response);
         }
-        public IActionResult HumanResources()
+        public async Task<IActionResult> HumanResources()
         {
-            return View();
+            var response =await _advertisementService.GetActivitiesAsync();
+            return this.ResponseView(response);
         }
+
     }
 }

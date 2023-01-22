@@ -42,6 +42,7 @@ namespace Batur.AdvertisementApp.Business.DependencyResolvers.Microsoft
             services.AddTransient<IValidator<AdvertisementCreateDto>, AdvertisementCreateDtoValidator>();
             services.AddTransient<IValidator<AdvertisementUpdateDto>, AdvertisementUpdateDtoValidator>();
             services.AddScoped<IProvidedServiceService, ProvidedServiceManager>();
+            services.AddScoped<IAdvertisementService, AdvertisementManager>();
         }
     }
 }
