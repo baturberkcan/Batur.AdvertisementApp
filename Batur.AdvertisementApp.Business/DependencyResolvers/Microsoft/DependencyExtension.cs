@@ -5,7 +5,7 @@ using Batur.AdvertisementApp.Business.Services;
 using Batur.AdvertisementApp.Business.ValidationRules;
 using Batur.AdvertisementApp.DataAccess.Context;
 using Batur.AdvertisementApp.DataAccess.UnitOfWork;
-using Batur.AdvertisementApp.Dtos.ProvidedServicesDto;
+using Batur.AdvertisementApp.Dtos;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

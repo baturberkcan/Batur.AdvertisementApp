@@ -1,4 +1,4 @@
-﻿using Batur.AdvertisementApp.Dtos.ProvidedServicesDto;
+﻿using Batur.AdvertisementApp.Dtos;
 using Batur.AdvertisementApp.Entities;
 using System;
 using System.Collections.Generic;

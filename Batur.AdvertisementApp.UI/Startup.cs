@@ -38,6 +38,7 @@ namespace Batur.AdvertisementApp.UI
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseStaticFiles();
 
             app.UseRouting();
 

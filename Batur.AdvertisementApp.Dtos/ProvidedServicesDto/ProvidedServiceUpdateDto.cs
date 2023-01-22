@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Batur.AdvertisementApp.Dtos.ProvidedServicesDto
+namespace Batur.AdvertisementApp.Dtos
 {
     public class ProvidedServiceUpdateDto : IUpdateDto
     {

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Batur.AdvertisementApp.Business.Interfaces;
 using Batur.AdvertisementApp.DataAccess.UnitOfWork;
-using Batur.AdvertisementApp.Dtos.ProvidedServicesDto;
+using Batur.AdvertisementApp.Dtos;
 using Batur.AdvertisementApp.Entities;
 using FluentValidation;
 using System;

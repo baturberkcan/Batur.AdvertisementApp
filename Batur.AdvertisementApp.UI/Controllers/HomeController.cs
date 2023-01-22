@@ -1,4 +1,5 @@
 ﻿using Batur.AdvertisementApp.Business.Interfaces;
+using Batur.AdvertisementApp.UI.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -15,8 +16,8 @@ namespace Batur.AdvertisementApp.UI.Controllers
 
         public async Task<IActionResult> Index()
         {
-             var response = await _providedService.GetAllAsync();
-            return View();
+            var response = await _providedService.GetAllAsync();
+            return this.ResponseView(response);
         }
     }
 }
