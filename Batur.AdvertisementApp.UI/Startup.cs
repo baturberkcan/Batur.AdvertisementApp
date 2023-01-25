@@ -1,4 +1,7 @@
 using Batur.AdvertisementApp.Business.DependencyResolvers.Microsoft;
+using Batur.AdvertisementApp.UI.Models;
+using Batur.AdvertisementApp.UI.ValidationRules;
+using FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -20,6 +23,7 @@ namespace Batur.AdvertisementApp.UI
 
         public IConfiguration Configuration { get; set; }
 
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -28,6 +32,7 @@ namespace Batur.AdvertisementApp.UI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDependencies(Configuration);
+            services.AddTransient<IValidator<UserCreateModel>, UserCreateModelValidator>();
             services.AddControllersWithViews();
         }
 
