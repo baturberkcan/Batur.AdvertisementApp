@@ -31,16 +31,19 @@ namespace Batur.AdvertisementApp.UI.Controllers
         [HttpPost]
         public async Task<IActionResult> SignUp(UserCreateModel model)
         {
-            var response = _userCreateValidator.Validate(model);
-            if (response.IsValid)
+            var result = _userCreateValidator.Validate(model);
+            if (result.IsValid)
             {
                 return View(model);
 
             }
-            foreach (var item in response.Errors)
+            foreach (var error in result.Errors)
             {
-                ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
             }
+            var response = await _genderService.GetAllAsync();
+            model.Genders = new SelectList(response.Data, "Id", "Defination");
+
             return View(model);
         }
     }

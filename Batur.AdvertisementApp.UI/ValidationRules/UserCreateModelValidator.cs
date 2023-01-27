@@ -9,22 +9,22 @@ namespace Batur.AdvertisementApp.UI.ValidationRules
         [Obsolete]
         public UserCreateModelValidator()
         {
-            CascadeMode = CascadeMode.StopOnFirstFailure;
-            RuleFor(x => x.Password).NotEmpty();
-            RuleFor(x => x.Password).MinimumLength(3);
-            RuleFor(x => x.Password).Equal(x => x.ConfirmPassword).WithMessage("Password not match");
-            RuleFor(x => x.Firstname).NotEmpty();
-            RuleFor(x => x.Surname).NotEmpty();
+            //CascadeMode = CascadeMode.StopOnFirstFailure;
+            RuleFor(x => x.Password).NotEmpty().WithMessage("Parola Boş olamaz");
+            RuleFor(x => x.Password).MinimumLength(3).WithMessage("Parola en az 3 karakter olmalıdır");
+            RuleFor(x => x.Password).Equal(x => x.ConfirmPassword).WithMessage("Parolalar eşleşmiyor");
+            RuleFor(x => x.Firstname).NotEmpty().WithMessage("Ad boş olamaz");
+            RuleFor(x => x.Surname).NotEmpty().WithMessage("Soyad boş olamaz");
 
-            RuleFor(x => x.Username).NotEmpty();
-            RuleFor(x => x.Username).MinimumLength(3);
+            RuleFor(x => x.Username).NotEmpty().WithMessage("Kullanıcı adı boş olamaz"); ;
+            RuleFor(x => x.Username).MinimumLength(3).WithMessage("Kullanıcı adı en 3 karakter olmalıdır"); ;
 
             RuleFor(x => new { x.Username, x.Firstname })
                 .Must(x => CannotFirstName(x.Username, x.Firstname))
                 .When(x => x.Username != null && x.Firstname != null)
-                .WithMessage("User name contains Firstname");
+                .WithMessage("Kullanıcı adı adınızı içeremez");
            
-            RuleFor(x => x.GenderId).NotEmpty();
+            RuleFor(x => x.GenderId).NotEmpty().WithMessage("Cinsiyet seçimi zorunludur");
 
         }
 

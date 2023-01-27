@@ -35,9 +35,11 @@
             <label>Şifre tekrar :</label>
             <input asp-for="@Model.ConfirmPassword" class="form-control" />
         </div>
-        <div class="mb-3 text-end">
-            <button type="submit" class="btn btn-primary ">Kayıt ol</button>
+         <div class="mb-3 text-end">
+            <button type="submit" class="btn btn-primary">Kayıt Ol</button>
         </div>
-        <div class="text-danger text-center  " asp-validation-summary="ModelOnly"></div>
+
+        <div class="text-danger" asp-validation-summary="All">
+        </div>
     </form>
 </div> 
