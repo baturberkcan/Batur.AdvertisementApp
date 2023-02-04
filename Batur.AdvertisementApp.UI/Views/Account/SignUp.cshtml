@@ -23,7 +23,7 @@
             <input asp-for="@Model.PhoneNumber" class="form-control" />
         </div>
         <div class="mb-3">
-            <select class="form-select" asp-items="@Model.Genders" name="@(nameof(Model.GenderId))">
+            <select class="form-select" asp-items="@Model.Genders"  asp-for="@Model.GenderId">
                 <option value="0">Bir cinsiyet seçiniz</option>
             </select>
         </div>
@@ -33,7 +33,7 @@
         </div>
         <div class="mb-3">
             <label>Şifre tekrar :</label>
-            <input asp-for="@Model.ConfirmPassword" class="form-control" />
+            <input asp-for="@Model.ConfirmPassword" type="password" class="form-control" />
         </div>
          <div class="mb-3 text-end">
             <button type="submit" class="btn btn-primary">Kayıt Ol</button>

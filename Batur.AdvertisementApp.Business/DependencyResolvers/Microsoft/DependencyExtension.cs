@@ -28,17 +28,7 @@ namespace Batur.AdvertisementApp.Business.DependencyResolvers.Microsoft
                 opt.UseSqlServer(configuration.GetConnectionString("Local"));
 
             });
-            var mapperConfigration = new MapperConfiguration(opt =>
-            {
-                opt.AddProfile(new ProvidedServiceProfile());
-                opt.AddProfile(new AdvertisementProfile());
-                opt.AddProfile(new AppUserProfile());
-                opt.AddProfile(new GenderProfile());
-            });
 
-
-            var mapper = mapperConfigration.CreateMapper();
-            services.AddSingleton(mapper);
             services.AddScoped<IUow, Uow>();
 
             services.AddTransient<IValidator<ProvidedServiceCreateDto>, ProvidedServiceCreateDtoValidator>();
@@ -57,5 +47,6 @@ namespace Batur.AdvertisementApp.Business.DependencyResolvers.Microsoft
 
 
         }
+      
     }
 }

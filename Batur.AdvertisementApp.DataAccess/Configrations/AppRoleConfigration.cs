@@ -14,6 +14,20 @@ namespace Batur.AdvertisementApp.DataAccess.Configrations
         public void Configure(EntityTypeBuilder<AppRole> builder)
         {
             builder.Property(x => x.Defination).HasMaxLength(300).IsRequired();
+            builder.HasData(new AppRole[] {
+                new()
+                {
+                    Defination="Admin",
+                    Id=1
+                },
+                new()
+                {
+                    Defination="Member",
+                    Id=2
+                }
+            });
         }
+
     }
 }
+

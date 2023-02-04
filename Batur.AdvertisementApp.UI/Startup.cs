@@ -1,4 +1,7 @@
+using AutoMapper;
 using Batur.AdvertisementApp.Business.DependencyResolvers.Microsoft;
+using Batur.AdvertisementApp.Business.Helpers;
+using Batur.AdvertisementApp.UI.Mappings.AutoMapper;
 using Batur.AdvertisementApp.UI.Models;
 using Batur.AdvertisementApp.UI.ValidationRules;
 using FluentValidation;
@@ -34,6 +37,15 @@ namespace Batur.AdvertisementApp.UI
             services.AddDependencies(Configuration);
             services.AddTransient<IValidator<UserCreateModel>, UserCreateModelValidator>();
             services.AddControllersWithViews();
+
+            var profiles = ProfileHelper.GetProfiles();
+            profiles.Add(new UserCreateModelProfile());
+            var configration = new MapperConfiguration(opt =>
+            {
+                opt.AddProfiles(profiles);
+            });
+            var mapper = configration.CreateMapper();
+            services.AddSingleton(mapper);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
