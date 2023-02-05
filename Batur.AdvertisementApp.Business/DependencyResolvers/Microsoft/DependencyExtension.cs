@@ -37,8 +37,10 @@ namespace Batur.AdvertisementApp.Business.DependencyResolvers.Microsoft
             services.AddTransient<IValidator<AdvertisementUpdateDto>, AdvertisementUpdateDtoValidator>();
             services.AddTransient<IValidator<AppUserCreateDto>, AppUserCreateDtoValidator>();
             services.AddTransient<IValidator<AppUserUpdateDto>, AppUserUpdateDtoValidator>();
+            services.AddTransient<IValidator<AppUserLoginDto>, AppUserLoginDtoValidator>();
             services.AddTransient<IValidator<GenderCreateDto>, GenderCreateDtoValidator>();
             services.AddTransient<IValidator<GenderUpdateDto>, GenderUpdateDtoValidator>();
+
 
             services.AddScoped<IProvidedServiceService, ProvidedServiceManager>();
             services.AddScoped<IAdvertisementService, AdvertisementManager>();
@@ -47,6 +49,6 @@ namespace Batur.AdvertisementApp.Business.DependencyResolvers.Microsoft
 
 
         }
-      
+
     }
 }

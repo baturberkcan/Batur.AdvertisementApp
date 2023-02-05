@@ -16,7 +16,8 @@ namespace Batur.AdvertisementApp.Business.Helpers
                     new ProvidedServiceProfile(),
                     new AdvertisementProfile(),
                     new AppUserProfile(),
-                    new GenderProfile()
+                    new GenderProfile(),
+                    new AppRoleProfile(),
             };
         }
     }
